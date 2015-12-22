@@ -13,10 +13,15 @@
 
 @property (nonatomic, copy) NSString* firstName;
 @property (nonatomic, copy) NSString* lastName;
-@property (nonatomic, copy) NSArray* arrests;
-@property (nonatomic) int arrestCount;
 @property (nonatomic, copy) NSString* position;
+// arrests list is null until detail view allocates by making API call
+@property (nonatomic, copy) NSArray* arrests;
+
+// placeholder arrestCount value to fill master table view
+@property (nonatomic) int arrestCount;
 
 //- (id)initWithJSON:(NSDictionary*)json;
+
+- (NSString*)fullName;
 
 @end
