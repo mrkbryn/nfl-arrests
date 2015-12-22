@@ -75,7 +75,12 @@ typedef enum CrimeType {
 /* A crime object with a type, description, and date */
 @interface Arrest : NSObject
 
-//@property (nonatomic) type;
+@property (nonatomic) NSString* date;
+@property (nonatomic) NSString* category;
+@property (nonatomic) NSString* encounter;
 @property (nonatomic) NSString* arrestDescription;
+@property (nonatomic) NSString* outcome;
+@property (nonatomic) NSString* team;
+@property (nonatomic) CrimeType type;
 
 @end

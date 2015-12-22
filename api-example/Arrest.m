@@ -10,4 +10,6 @@
 
 @implementation Arrest
 
+@synthesize date, category, encounter, arrestDescription, outcome, type, team;
+
 @end
