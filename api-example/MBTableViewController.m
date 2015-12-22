@@ -28,8 +28,6 @@
     UINib *playerCellNib = [UINib nibWithNibName:@"PlayerTableViewCell" bundle:nil];
     [self.tableView registerNib:playerCellNib forCellReuseIdentifier:@"playercell"];
     
-    //UINib *playerDetailVC = [UINib nibWithNibName:@"PlayerDetailViewController" bundle:nil];
-    
     // API call
     NSString *urlString = @"http://nflarrest.com/api/v1/player";
     NSURL *url = [NSURL URLWithString:urlString];
@@ -110,25 +108,18 @@
     Player *player = [playerData objectAtIndex:[indexPath row]];
     NSLog(@"Selected player %@", player.firstName);
     
-    // would be good to start API call here...
+    
     
     PlayerDetailViewController *detailVC = [[PlayerDetailViewController alloc] initWithNibName:@"PlayerDetailViewController" bundle:nil];
     [self presentViewController:detailVC animated:YES completion:nil];
     
+    // would be good to start API call after assigning player variable...
     detailVC.p = player;
+    [detailVC populateArrests];
     detailVC.playerNameLabel.text = player.firstName;
     detailVC.positionLabel.text = player.position;
     detailVC.numArrestsLabel.text = [NSString stringWithFormat:@"%i Arrests", player.arrestCount];
     
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

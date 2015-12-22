@@ -10,7 +10,7 @@
 #import "PlayerTableViewCell.h"
 #import "Player.h"
 #import "Team.h"
-#import "Crime.h"
+#import "Arrest.h"
 #import "PlayerDetailViewController.h"
 
 @interface MBTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>

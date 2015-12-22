@@ -47,7 +47,11 @@
             if (jsonParsingError) {
                 NSLog(@"Error while handling player arrest json");
             } else {
+                // assign p's arrest array
+                p.arrests = arrestArray;
+                
                 // handle JSON
+                
                 for (int i = 0; i < arrestArray.count; i++) {
                     NSDictionary *dict = [arrestArray objectAtIndex:i];
                     

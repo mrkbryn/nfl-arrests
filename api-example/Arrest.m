@@ -6,8 +6,8 @@
 //  Copyright © 2015 Mark Bryan. All rights reserved.
 //
 
-#import "Crime.h"
+#import "Arrest.h"
 
-@implementation Crime
+@implementation Arrest
 
 @end
