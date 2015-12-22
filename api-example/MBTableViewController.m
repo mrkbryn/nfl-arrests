@@ -28,6 +28,8 @@
     UINib *playerCellNib = [UINib nibWithNibName:@"PlayerTableViewCell" bundle:nil];
     [self.tableView registerNib:playerCellNib forCellReuseIdentifier:@"playercell"];
     
+    //UINib *playerDetailVC = [UINib nibWithNibName:@"PlayerDetailViewController" bundle:nil];
+    
     // API call
     NSString *urlString = @"http://nflarrest.com/api/v1/player";
     NSURL *url = [NSURL URLWithString:urlString];
@@ -99,11 +101,26 @@
     
     cell.playerNameLabel.text = p.firstName;
     cell.arrestCountLabel.text = [NSString stringWithFormat:@"%i", p.arrestCount];
-    // positionlabel
+    cell.positionLabel.text = p.position;
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Player *player = [playerData objectAtIndex:[indexPath row]];
+    NSLog(@"Selected player %@", player.firstName);
+    
+    // would be good to start API call here...
+    
+    PlayerDetailViewController *detailVC = [[PlayerDetailViewController alloc] initWithNibName:@"PlayerDetailViewController" bundle:nil];
+    [self presentViewController:detailVC animated:YES completion:nil];
+    
+    detailVC.p = player;
+    detailVC.playerNameLabel.text = player.firstName;
+    detailVC.positionLabel.text = player.position;
+    detailVC.numArrestsLabel.text = [NSString stringWithFormat:@"%i Arrests", player.arrestCount];
+    
+}
 /*
 #pragma mark - Navigation
 

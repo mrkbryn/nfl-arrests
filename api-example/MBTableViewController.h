@@ -11,6 +11,7 @@
 #import "Player.h"
 #import "Team.h"
 #import "Crime.h"
+#import "PlayerDetailViewController.h"
 
 @interface MBTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
