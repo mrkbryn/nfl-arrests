@@ -9,12 +9,19 @@
 /* Begin PBXBuildFile section */
 		42847F111C260F8400D5F57B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F101C260F8400D5F57B /* main.m */; };
 		42847F141C260F8400D5F57B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F131C260F8400D5F57B /* AppDelegate.m */; };
-		42847F171C260F8400D5F57B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F161C260F8400D5F57B /* ViewController.m */; };
 		42847F1A1C260F8400D5F57B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42847F181C260F8400D5F57B /* Main.storyboard */; };
 		42847F1C1C260F8400D5F57B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42847F1B1C260F8400D5F57B /* Assets.xcassets */; };
 		42847F1F1C260F8400D5F57B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42847F1D1C260F8400D5F57B /* LaunchScreen.storyboard */; };
 		42847F2A1C260F8400D5F57B /* api_exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F291C260F8400D5F57B /* api_exampleTests.m */; };
 		42847F351C260F8400D5F57B /* api_exampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F341C260F8400D5F57B /* api_exampleUITests.m */; };
+		42847F441C2617BA00D5F57B /* MBTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F431C2617BA00D5F57B /* MBTableViewController.m */; };
+		42847F471C27571A00D5F57B /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F461C27571A00D5F57B /* Player.m */; };
+		42847F4A1C27572700D5F57B /* Crime.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F491C27572700D5F57B /* Crime.m */; };
+		42847F4D1C27578E00D5F57B /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F4C1C27578E00D5F57B /* Team.m */; };
+		42847F511C28AC2D00D5F57B /* PlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F4F1C28AC2D00D5F57B /* PlayerTableViewCell.m */; };
+		42847F521C28AC2D00D5F57B /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42847F501C28AC2D00D5F57B /* PlayerTableViewCell.xib */; };
+		42847F561C29C5ED00D5F57B /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F541C29C5ED00D5F57B /* PlayerDetailViewController.m */; };
+		42847F571C29C5ED00D5F57B /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42847F551C29C5ED00D5F57B /* PlayerDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +46,6 @@
 		42847F101C260F8400D5F57B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42847F121C260F8400D5F57B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42847F131C260F8400D5F57B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		42847F151C260F8400D5F57B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		42847F161C260F8400D5F57B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		42847F191C260F8400D5F57B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42847F1B1C260F8400D5F57B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42847F1E1C260F8400D5F57B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +56,20 @@
 		42847F301C260F8400D5F57B /* api-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "api-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42847F341C260F8400D5F57B /* api_exampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = api_exampleUITests.m; sourceTree = "<group>"; };
 		42847F361C260F8400D5F57B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42847F421C2617BA00D5F57B /* MBTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTableViewController.h; sourceTree = "<group>"; };
+		42847F431C2617BA00D5F57B /* MBTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTableViewController.m; sourceTree = "<group>"; };
+		42847F451C27571A00D5F57B /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		42847F461C27571A00D5F57B /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		42847F481C27572700D5F57B /* Crime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crime.h; sourceTree = "<group>"; };
+		42847F491C27572700D5F57B /* Crime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crime.m; sourceTree = "<group>"; };
+		42847F4B1C27578E00D5F57B /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		42847F4C1C27578E00D5F57B /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		42847F4E1C28AC2D00D5F57B /* PlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTableViewCell.h; sourceTree = "<group>"; };
+		42847F4F1C28AC2D00D5F57B /* PlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTableViewCell.m; sourceTree = "<group>"; };
+		42847F501C28AC2D00D5F57B /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
+		42847F531C29C5ED00D5F57B /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
+		42847F541C29C5ED00D5F57B /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
+		42847F551C29C5ED00D5F57B /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +122,21 @@
 			children = (
 				42847F121C260F8400D5F57B /* AppDelegate.h */,
 				42847F131C260F8400D5F57B /* AppDelegate.m */,
-				42847F151C260F8400D5F57B /* ViewController.h */,
-				42847F161C260F8400D5F57B /* ViewController.m */,
+				42847F421C2617BA00D5F57B /* MBTableViewController.h */,
+				42847F431C2617BA00D5F57B /* MBTableViewController.m */,
+				42847F531C29C5ED00D5F57B /* PlayerDetailViewController.h */,
+				42847F541C29C5ED00D5F57B /* PlayerDetailViewController.m */,
+				42847F551C29C5ED00D5F57B /* PlayerDetailViewController.xib */,
+				42847F4E1C28AC2D00D5F57B /* PlayerTableViewCell.h */,
+				42847F4F1C28AC2D00D5F57B /* PlayerTableViewCell.m */,
+				42847F501C28AC2D00D5F57B /* PlayerTableViewCell.xib */,
 				42847F181C260F8400D5F57B /* Main.storyboard */,
+				42847F451C27571A00D5F57B /* Player.h */,
+				42847F461C27571A00D5F57B /* Player.m */,
+				42847F481C27572700D5F57B /* Crime.h */,
+				42847F4B1C27578E00D5F57B /* Team.h */,
+				42847F4C1C27578E00D5F57B /* Team.m */,
+				42847F491C27572700D5F57B /* Crime.m */,
 				42847F1B1C260F8400D5F57B /* Assets.xcassets */,
 				42847F1D1C260F8400D5F57B /* LaunchScreen.storyboard */,
 				42847F201C260F8400D5F57B /* Info.plist */,
@@ -246,8 +277,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42847F521C28AC2D00D5F57B /* PlayerTableViewCell.xib in Resources */,
 				42847F1F1C260F8400D5F57B /* LaunchScreen.storyboard in Resources */,
 				42847F1C1C260F8400D5F57B /* Assets.xcassets in Resources */,
+				42847F571C29C5ED00D5F57B /* PlayerDetailViewController.xib in Resources */,
 				42847F1A1C260F8400D5F57B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,9 +306,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42847F171C260F8400D5F57B /* ViewController.m in Sources */,
+				42847F4A1C27572700D5F57B /* Crime.m in Sources */,
+				42847F441C2617BA00D5F57B /* MBTableViewController.m in Sources */,
+				42847F511C28AC2D00D5F57B /* PlayerTableViewCell.m in Sources */,
 				42847F141C260F8400D5F57B /* AppDelegate.m in Sources */,
 				42847F111C260F8400D5F57B /* main.m in Sources */,
+				42847F4D1C27578E00D5F57B /* Team.m in Sources */,
+				42847F561C29C5ED00D5F57B /* PlayerDetailViewController.m in Sources */,
+				42847F471C27571A00D5F57B /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +537,7 @@
 				42847F3B1C260F8400D5F57B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42847F3C1C260F8400D5F57B /* Build configuration list for PBXNativeTarget "api-exampleTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +546,7 @@
 				42847F3E1C260F8400D5F57B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42847F3F1C260F8400D5F57B /* Build configuration list for PBXNativeTarget "api-exampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +555,7 @@
 				42847F411C260F8400D5F57B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
