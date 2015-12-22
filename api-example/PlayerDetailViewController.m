@@ -14,16 +14,22 @@
 
 @implementation PlayerDetailViewController
 
-@synthesize p;
+@synthesize p, arrests, arrestsTableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    arrestsTableView.delegate = self;
+    arrestsTableView.dataSource = self;
+    [arrestsTableView setUserInteractionEnabled:NO];
+    
+    // Register Nibs
+    UINib *arrestNib = [UINib nibWithNibName:@"ArrestTableViewCell" bundle:nil];
+    [arrestsTableView registerNib:arrestNib forCellReuseIdentifier:@"arrestcell"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)populateArrests {
@@ -33,6 +39,8 @@
     NSString *nameEndpoint = [p.firstName stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSString *playerSearchURLString = [NSString stringWithFormat:@"%@%@", baseURLString, nameEndpoint];
     NSURL *searchURL = [NSURL URLWithString:playerSearchURLString];
+    
+    NSLog(@"Connecting to %@", searchURL);
     
     NSURLSessionDataTask *playerArrestInfoDataTask = [[NSURLSession sharedSession] dataTaskWithURL:searchURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
@@ -47,10 +55,8 @@
             if (jsonParsingError) {
                 NSLog(@"Error while handling player arrest json");
             } else {
-                // assign p's arrest array
-                p.arrests = arrestArray;
-                
                 // handle JSON
+                NSMutableArray *temp = [[NSMutableArray alloc] init];
                 
                 for (int i = 0; i < arrestArray.count; i++) {
                     NSDictionary *dict = [arrestArray objectAtIndex:i];
@@ -63,7 +69,23 @@
                     
                     NSLog(@"Arrest %i while on %@: %@, %@, \nDescription: %@\nOutcome: %@", i + 1, team, category, dateString, arrestDescription, arrestOutcome);
                     
+                    Arrest *newArrest = [[Arrest alloc] init];
+                    newArrest.team = team;
+                    newArrest.date = dateString;
+                    newArrest.category = category;
+                    newArrest.arrestDescription = arrestDescription;
+                    newArrest.outcome = arrestOutcome;
+                    newArrest.type = DUI;
+                    
+                    [temp addObject:newArrest];
+                    
                 }
+                
+                // Assign instance variable after parsing JSON into Arrest objects
+                arrests = [temp copy];
+                
+                [arrestsTableView reloadData];
+                [arrestsTableView setNeedsDisplay];
                 
             }
             
@@ -77,14 +99,33 @@
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Table view data source
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return arrests.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ArrestTableViewCell *cell = (ArrestTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"arrestcell" forIndexPath:indexPath];
+    
+    Arrest *a = [arrests objectAtIndex:[indexPath row]];
+    
+    cell.descriptionBox.text = a.arrestDescription;
+    cell.categoryLabel.text = a.category;
+    cell.dateLabel.text = a.date;
+    cell.teamLabel.text = a.team;
+    [cell.descriptionBox sizeToFit];
+    [cell setNeedsDisplay];
+    
+    return cell;
+}
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 120;
+//}
 
 @end

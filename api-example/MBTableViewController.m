@@ -69,6 +69,7 @@
                 }
                 
                 [self.tableView reloadData];
+                [self.tableView setNeedsDisplay];
                 
             }
         }

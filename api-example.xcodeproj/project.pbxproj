@@ -22,6 +22,9 @@
 		42847F521C28AC2D00D5F57B /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42847F501C28AC2D00D5F57B /* PlayerTableViewCell.xib */; };
 		42847F561C29C5ED00D5F57B /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F541C29C5ED00D5F57B /* PlayerDetailViewController.m */; };
 		42847F571C29C5ED00D5F57B /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42847F551C29C5ED00D5F57B /* PlayerDetailViewController.xib */; };
+		42847F651C29F31F00D5F57B /* ArrestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F631C29F31F00D5F57B /* ArrestTableViewCell.m */; };
+		42847F661C29F31F00D5F57B /* ArrestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42847F641C29F31F00D5F57B /* ArrestTableViewCell.xib */; };
+		42847F691C29F44700D5F57B /* ArrestsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42847F681C29F44700D5F57B /* ArrestsTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,11 @@
 		42847F531C29C5ED00D5F57B /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
 		42847F541C29C5ED00D5F57B /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		42847F551C29C5ED00D5F57B /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
+		42847F621C29F31F00D5F57B /* ArrestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrestTableViewCell.h; sourceTree = "<group>"; };
+		42847F631C29F31F00D5F57B /* ArrestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrestTableViewCell.m; sourceTree = "<group>"; };
+		42847F641C29F31F00D5F57B /* ArrestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrestTableViewCell.xib; sourceTree = "<group>"; };
+		42847F671C29F44700D5F57B /* ArrestsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrestsTableView.h; path = ../ArrestsTableView.h; sourceTree = "<group>"; };
+		42847F681C29F44700D5F57B /* ArrestsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrestsTableView.m; path = ../ArrestsTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 				42847F1B1C260F8400D5F57B /* Assets.xcassets */,
 				42847F5E1C29EA1A00D5F57B /* View Controllers */,
 				42847F5C1C29E9F100D5F57B /* Table View Cells */,
+				42847F6B1C29F4BC00D5F57B /* Views */,
 				42847F591C29E99500D5F57B /* Nibs */,
 				42847F581C29E98100D5F57B /* Models */,
 				42847F0F1C260F8400D5F57B /* Supporting Files */,
@@ -173,6 +182,7 @@
 		42847F591C29E99500D5F57B /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				42847F641C29F31F00D5F57B /* ArrestTableViewCell.xib */,
 				42847F551C29C5ED00D5F57B /* PlayerDetailViewController.xib */,
 				42847F501C28AC2D00D5F57B /* PlayerTableViewCell.xib */,
 			);
@@ -193,8 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				42847F461C27571A00D5F57B /* Player.m */,
-				42847F4C1C27578E00D5F57B /* Team.m */,
 				42847F491C27572700D5F57B /* Arrest.m */,
+				42847F4C1C27578E00D5F57B /* Team.m */,
 			);
 			name = Implementations;
 			sourceTree = "<group>";
@@ -204,6 +214,8 @@
 			children = (
 				42847F4E1C28AC2D00D5F57B /* PlayerTableViewCell.h */,
 				42847F4F1C28AC2D00D5F57B /* PlayerTableViewCell.m */,
+				42847F621C29F31F00D5F57B /* ArrestTableViewCell.h */,
+				42847F631C29F31F00D5F57B /* ArrestTableViewCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -217,6 +229,15 @@
 				42847F541C29C5ED00D5F57B /* PlayerDetailViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		42847F6B1C29F4BC00D5F57B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42847F671C29F44700D5F57B /* ArrestsTableView.h */,
+				42847F681C29F44700D5F57B /* ArrestsTableView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42847F661C29F31F00D5F57B /* ArrestTableViewCell.xib in Resources */,
 				42847F521C28AC2D00D5F57B /* PlayerTableViewCell.xib in Resources */,
 				42847F1F1C260F8400D5F57B /* LaunchScreen.storyboard in Resources */,
 				42847F1C1C260F8400D5F57B /* Assets.xcassets in Resources */,
@@ -354,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42847F651C29F31F00D5F57B /* ArrestTableViewCell.m in Sources */,
 				42847F4A1C27572700D5F57B /* Arrest.m in Sources */,
 				42847F441C2617BA00D5F57B /* MBTableViewController.m in Sources */,
 				42847F511C28AC2D00D5F57B /* PlayerTableViewCell.m in Sources */,
@@ -361,6 +384,7 @@
 				42847F111C260F8400D5F57B /* main.m in Sources */,
 				42847F4D1C27578E00D5F57B /* Team.m in Sources */,
 				42847F561C29C5ED00D5F57B /* PlayerDetailViewController.m in Sources */,
+				42847F691C29F44700D5F57B /* ArrestsTableView.m in Sources */,
 				42847F471C27571A00D5F57B /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
