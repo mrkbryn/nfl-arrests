@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *playerNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *arrestCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *positionLabel;
 
 
 @end
