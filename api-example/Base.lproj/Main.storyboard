@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Hi-->
         <scene sceneID="AAb-2e-X2s">
             <objects>
-                <tableViewController id="5Zl-kS-QtE" customClass="MBTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Hi" id="5Zl-kS-QtE" customClass="MBTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" id="bvz-Kq-nxQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,10 +28,11 @@
                             <outlet property="delegate" destination="5Zl-kS-QtE" id="UG5-SL-ZUr"/>
                         </connections>
                     </tableView>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9U-BN-7iy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321" y="378"/>
+            <point key="canvasLocation" x="333" y="177"/>
         </scene>
     </scenes>
 </document>
