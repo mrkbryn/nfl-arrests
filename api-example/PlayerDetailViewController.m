@@ -78,7 +78,6 @@
                     newArrest.category = category;
                     newArrest.arrestDescription = arrestDescription;
                     newArrest.outcome = arrestOutcome;
-                    newArrest.type = DUI;
                     
                     [temp addObject:newArrest];
                     
