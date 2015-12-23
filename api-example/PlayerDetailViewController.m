@@ -9,6 +9,10 @@
 #import "PlayerDetailViewController.h"
 
 @interface PlayerDetailViewController ()
+{
+    NSDateFormatter *formatter;
+    NSDateFormatter *parser;
+}
 
 @end
 
@@ -21,6 +25,14 @@
     self.arrestsTableView.delegate = self;
     self.arrestsTableView.dataSource = self;
     [self.arrestsTableView setUserInteractionEnabled:YES];
+    
+    // date formatter setup, ex. "Jan. 20, 2001"
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM. dd, yyyy"];
+    
+    // date formatter to parse date strings into NSDates
+    parser = [[NSDateFormatter alloc] init];
+    [parser setDateFormat:@"yyyy-MM-dd"];
     
     // Register Nibs
     UINib *arrestNib = [UINib nibWithNibName:@"ArrestTableViewCell" bundle:nil];
@@ -68,6 +80,7 @@
                     
                     NSString *team = [dict objectForKey:@"Team"];
                     NSString *dateString = [dict objectForKey:@"Date"];
+                    NSDate *date = [parser dateFromString:dateString];
                     NSString *category = [dict objectForKey:@"Category"];
                     NSString *arrestDescription = [dict objectForKey:@"Description"];
                     NSString *arrestOutcome = [dict objectForKey:@"Outcome"];
@@ -76,7 +89,7 @@
                     
                     Arrest *newArrest = [[Arrest alloc] init];
                     newArrest.team = team;
-                    newArrest.date = dateString;
+                    newArrest.date = date;
                     newArrest.category = category;
                     newArrest.arrestDescription = arrestDescription;
                     newArrest.outcome = arrestOutcome;
@@ -122,7 +135,7 @@
     
     cell.descriptionText.text = [NSString stringWithFormat:@"%@\nOutcome: %@", a.arrestDescription, a.outcome];
     cell.categoryLabel.text = a.category;
-    cell.dateLabel.text = a.date;
+    cell.dateLabel.text = [formatter stringFromDate:a.date];
     cell.teamLabel.text = a.team;
     
     return cell;

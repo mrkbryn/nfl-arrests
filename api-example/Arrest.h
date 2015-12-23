@@ -11,7 +11,7 @@
 /* A crime object with a type, description, and date */
 @interface Arrest : NSObject
 
-@property (nonatomic) NSString* date;
+@property (nonatomic) NSDate* date;
 @property (nonatomic) NSString* category; // also crime type
 @property (nonatomic) NSString* encounter;
 @property (nonatomic) NSString* arrestDescription;
