@@ -60,11 +60,19 @@
                     NSString *playerPosition = [playerDict objectForKey:@"Position"];
                     NSString *arrestCount = [playerDict objectForKey:@"arrest_count"];
                     
-                    NSLog(@"Player %i: %@, Position: %@, Arrest Count: %@", i + 1, playerName, playerPosition, arrestCount);
-                    
                     Player *p = [[Player alloc] init];
+                    
                     // parse name (fname, lname)
-                    p.firstName = playerName;
+                    NSArray *array = [playerName componentsSeparatedByString:@" "];
+                    NSLog(@"%@",array);
+                    if (array.count > 0) {
+                        p.firstName = [array objectAtIndex:0];
+                    }
+                    // remove first name
+                    array = [array subarrayWithRange:NSMakeRange(1, array.count-1)];
+                    // pool rest of string into last name (quick fix, ignoring "Jr." components)
+                    p.lastName = [[array valueForKey:@"description"] componentsJoinedByString:@" "];
+                    
                     p.position = playerPosition;
                     p.arrestCount = arrestCount.intValue;
                     
@@ -104,7 +112,7 @@
     
     Player *p = [playerData objectAtIndex:[indexPath row]];
     
-    cell.playerNameLabel.text = p.firstName;
+    cell.playerNameLabel.text = p.fullName;
     cell.arrestCountLabel.text = [NSString stringWithFormat:@"%i", p.arrestCount];
     cell.positionLabel.text = p.position;
     
@@ -123,7 +131,7 @@
     // would be good to start API call after assigning player variable...
     detailVC.p = player;
     [detailVC populateArrests];
-    detailVC.playerNameLabel.text = player.firstName;
+    detailVC.playerNameLabel.text = player.fullName;
     detailVC.positionLabel.text = player.position;
     detailVC.numArrestsLabel.text = [NSString stringWithFormat:@"%i Arrests", player.arrestCount];
     

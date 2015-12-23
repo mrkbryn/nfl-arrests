@@ -50,7 +50,7 @@
     // Call API
     NSString *baseURLString = @"http://nflarrest.com/api/v1/player/arrests/";
     // change whitespace in name to %20's for api call
-    NSString *nameEndpoint = [self.p.firstName stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    NSString *nameEndpoint = [self.p.fullName stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSString *playerSearchURLString = [NSString stringWithFormat:@"%@%@", baseURLString, nameEndpoint];
     NSURL *searchURL = [NSURL URLWithString:playerSearchURLString];
     
