@@ -23,6 +23,7 @@
     
     // Table View data
     playerData = [[NSMutableArray alloc] init];
+    [self.tableView setDataSource:self];
     
     // Register Nibs
     UINib *playerCellNib = [UINib nibWithNibName:@"PlayerTableViewCell" bundle:nil];
@@ -31,6 +32,9 @@
     // API call
     NSString *urlString = @"http://nflarrest.com/api/v1/player";
     NSURL *url = [NSURL URLWithString:urlString];
+    
+    // safer for data task
+    __weak typeof((self)) weakSelf = self;
     
     NSURLSessionDataTask *getPlayersDataTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         // check for error
@@ -68,9 +72,11 @@
                     
                 }
                 
-                [self.tableView reloadData];
-                [self.tableView setNeedsDisplay];
-                
+                // update UI in main queue
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf.tableView reloadData];
+                    [weakSelf.tableView setNeedsDisplay];
+                });
             }
         }
     }];

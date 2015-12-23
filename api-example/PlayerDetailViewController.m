@@ -24,6 +24,8 @@
     UINib *arrestNib = [UINib nibWithNibName:@"ArrestTableViewCell" bundle:nil];
     [self.arrestsTableView registerNib:arrestNib forCellReuseIdentifier:@"arrestcell"];
     
+    self.imageView.layer.cornerRadius = self.imageView.frame.size.width/2;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +42,7 @@
     
     NSLog(@"Connecting to %@", searchURL);
     
+    // safer for data task
     __weak typeof((self)) weakSelf = self;
     
     NSURLSessionDataTask *playerArrestInfoDataTask = [[NSURLSession sharedSession] dataTaskWithURL:searchURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -84,11 +87,13 @@
                 // Assign instance variable after parsing JSON into Arrest objects
                 weakSelf.arrests = [temp copy];
                 
+            }
+
+            // update UI in main queue
+            dispatch_async(dispatch_get_main_queue(), ^{
                 [self.arrestsTableView reloadData];
                 [self.arrestsTableView setNeedsDisplay];
-                
-            }
-            
+            });
         }
     }];
     [playerArrestInfoDataTask resume];
@@ -124,8 +129,8 @@
     return cell;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 120;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
 
 @end

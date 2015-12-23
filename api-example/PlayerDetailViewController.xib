@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KLO-Wq-xDI">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generic-headshot" translatesAutoresizingMaskIntoConstraints="NO" id="KLO-Wq-xDI">
                     <rect key="frame" x="236" y="30" width="128" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="128" id="8i8-Ft-P3z"/>
@@ -91,4 +91,7 @@
             <point key="canvasLocation" x="491" y="345"/>
         </view>
     </objects>
+    <resources>
+        <image name="generic-headshot" width="418" height="418"/>
+    </resources>
 </document>
