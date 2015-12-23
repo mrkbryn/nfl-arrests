@@ -10,8 +10,6 @@
 
 @implementation ArrestTableViewCell
 
-@synthesize categoryLabel, dateLabel, descriptionBox, teamLabel;
-
 - (void)awakeFromNib {
     // Initialization code
 }

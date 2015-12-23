@@ -14,17 +14,15 @@
 
 @implementation PlayerDetailViewController
 
-@synthesize p, arrests, arrestsTableView;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    arrestsTableView.delegate = self;
-    arrestsTableView.dataSource = self;
-    [arrestsTableView setUserInteractionEnabled:NO];
+    self.arrestsTableView.delegate = self;
+    self.arrestsTableView.dataSource = self;
+    [self.arrestsTableView setUserInteractionEnabled:NO];
     
     // Register Nibs
     UINib *arrestNib = [UINib nibWithNibName:@"ArrestTableViewCell" bundle:nil];
-    [arrestsTableView registerNib:arrestNib forCellReuseIdentifier:@"arrestcell"];
+    [self.arrestsTableView registerNib:arrestNib forCellReuseIdentifier:@"arrestcell"];
     
 }
 
@@ -36,11 +34,13 @@
     // Call API
     NSString *baseURLString = @"http://nflarrest.com/api/v1/player/arrests/";
     // change whitespace in name to %20's for api call
-    NSString *nameEndpoint = [p.firstName stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    NSString *nameEndpoint = [self.p.firstName stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSString *playerSearchURLString = [NSString stringWithFormat:@"%@%@", baseURLString, nameEndpoint];
     NSURL *searchURL = [NSURL URLWithString:playerSearchURLString];
     
     NSLog(@"Connecting to %@", searchURL);
+    
+    __weak typeof((self)) weakSelf = self;
     
     NSURLSessionDataTask *playerArrestInfoDataTask = [[NSURLSession sharedSession] dataTaskWithURL:searchURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
@@ -82,10 +82,10 @@
                 }
                 
                 // Assign instance variable after parsing JSON into Arrest objects
-                arrests = [temp copy];
+                weakSelf.arrests = [temp copy];
                 
-                [arrestsTableView reloadData];
-                [arrestsTableView setNeedsDisplay];
+                [self.arrestsTableView reloadData];
+                [self.arrestsTableView setNeedsDisplay];
                 
             }
             
@@ -106,13 +106,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return arrests.count;
+    return self.arrests.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ArrestTableViewCell *cell = (ArrestTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"arrestcell" forIndexPath:indexPath];
     
-    Arrest *a = [arrests objectAtIndex:[indexPath row]];
+    Arrest *a = [self.arrests objectAtIndex:[indexPath row]];
     
     cell.descriptionBox.text = a.arrestDescription;
     cell.categoryLabel.text = a.category;

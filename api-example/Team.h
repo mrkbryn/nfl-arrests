@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+/* An NFL team with a name, an array of players with arrests, an arrest count */
 @interface Team : NSObject
 
 @end

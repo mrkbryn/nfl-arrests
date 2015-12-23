@@ -10,12 +10,8 @@
 
 @implementation Player
 
-// setters and getters
-@synthesize firstName = _firstName;
-@synthesize lastName = _lastName;
-
 - (NSString*)fullName {
-    return [NSString stringWithFormat:@"%@ %@", _firstName, _lastName];
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
 }
 
 @end

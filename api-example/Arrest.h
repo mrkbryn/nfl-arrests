@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+// CrimeType enum may be redundant, unecessary...
 typedef enum CrimeType {
     DUI,
     DOMESTIC_VIOLENCE,
