@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerDetailViewController">
             <connections>
-                <outlet property="arrestsTableView" destination="cb6-rs-ixH" id="gnQ-ga-AaH"/>
+                <outlet property="arrestsTableView" destination="mhq-WX-i42" id="wqP-jN-GXB"/>
                 <outlet property="imageView" destination="KLO-Wq-xDI" id="rsX-uu-zR1"/>
                 <outlet property="numArrestsLabel" destination="fir-BU-ULO" id="IOI-zY-wIf"/>
                 <outlet property="playerNameLabel" destination="LRi-Ct-KWZ" id="Eae-cs-yrO"/>
@@ -60,7 +60,7 @@
                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cb6-rs-ixH" customClass="ArrestsTableView">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mhq-WX-i42">
                     <rect key="frame" x="8" y="297" width="584" height="294.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
@@ -71,20 +71,20 @@
                 <constraint firstItem="UON-6H-92E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="5hb-Mc-QSP"/>
                 <constraint firstItem="p9U-9p-XLa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="6Rm-Z3-toh"/>
                 <constraint firstItem="p9U-9p-XLa" firstAttribute="top" secondItem="LRi-Ct-KWZ" secondAttribute="bottom" constant="8" id="8K6-8q-ehM"/>
-                <constraint firstItem="cb6-rs-ixH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="9cd-DC-ESM"/>
                 <constraint firstAttribute="trailing" secondItem="UON-6H-92E" secondAttribute="trailing" constant="8" id="9lW-wU-GHh"/>
+                <constraint firstItem="mhq-WX-i42" firstAttribute="top" secondItem="fir-BU-ULO" secondAttribute="bottom" constant="8" id="AZS-L6-7cu"/>
+                <constraint firstAttribute="bottom" secondItem="mhq-WX-i42" secondAttribute="bottom" constant="8" id="Dcb-Qm-CaX"/>
                 <constraint firstItem="KLO-Wq-xDI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FPm-F7-1oh"/>
                 <constraint firstItem="LRi-Ct-KWZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Ihy-nG-tH5"/>
                 <constraint firstItem="LRi-Ct-KWZ" firstAttribute="top" secondItem="UON-6H-92E" secondAttribute="bottom" constant="26" id="Lqs-Lc-8K9"/>
                 <constraint firstAttribute="trailing" secondItem="fir-BU-ULO" secondAttribute="trailing" constant="8" id="PCl-dp-Q1Q"/>
-                <constraint firstItem="cb6-rs-ixH" firstAttribute="top" secondItem="fir-BU-ULO" secondAttribute="bottom" constant="8" id="Tlw-MS-gwA"/>
-                <constraint firstAttribute="trailing" secondItem="cb6-rs-ixH" secondAttribute="trailing" constant="8" id="V3i-2w-xha"/>
                 <constraint firstItem="fir-BU-ULO" firstAttribute="top" secondItem="p9U-9p-XLa" secondAttribute="bottom" constant="7.5" id="XBE-Bc-u2B"/>
                 <constraint firstItem="fir-BU-ULO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="YzA-y5-jnv"/>
                 <constraint firstItem="Yca-EU-mel" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="bkN-Et-3AW"/>
                 <constraint firstItem="Yca-EU-mel" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="d7C-xA-eiH"/>
                 <constraint firstItem="KLO-Wq-xDI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="ePq-cO-kU9"/>
-                <constraint firstAttribute="bottom" secondItem="cb6-rs-ixH" secondAttribute="bottom" constant="8" id="l2q-qA-hpe"/>
+                <constraint firstAttribute="trailing" secondItem="mhq-WX-i42" secondAttribute="trailing" constant="8" id="f2y-zq-agO"/>
+                <constraint firstItem="mhq-WX-i42" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="rWN-7G-XZf"/>
                 <constraint firstAttribute="trailing" secondItem="p9U-9p-XLa" secondAttribute="trailing" constant="8" id="xh6-Av-W8H"/>
                 <constraint firstAttribute="trailing" secondItem="LRi-Ct-KWZ" secondAttribute="trailing" constant="8" id="zeJ-vb-5s0"/>
             </constraints>

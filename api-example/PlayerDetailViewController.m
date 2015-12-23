@@ -16,9 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // arrestsTableView setup
     self.arrestsTableView.delegate = self;
     self.arrestsTableView.dataSource = self;
-    [self.arrestsTableView setUserInteractionEnabled:NO];
+    [self.arrestsTableView setUserInteractionEnabled:YES];
     
     // Register Nibs
     UINib *arrestNib = [UINib nibWithNibName:@"ArrestTableViewCell" bundle:nil];
@@ -118,18 +120,16 @@
     
     Arrest *a = [self.arrests objectAtIndex:[indexPath row]];
     
-    cell.descriptionBox.text = a.arrestDescription;
+    cell.descriptionText.text = [NSString stringWithFormat:@"%@\nOutcome: %@", a.arrestDescription, a.outcome];
     cell.categoryLabel.text = a.category;
     cell.dateLabel.text = a.date;
     cell.teamLabel.text = a.team;
-    [cell.descriptionBox sizeToFit];
-    [cell setNeedsDisplay];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 130;
 }
 
 @end

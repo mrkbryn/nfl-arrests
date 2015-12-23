@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionBox;
 @property (weak, nonatomic) IBOutlet UILabel *teamLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionText;
 
 @end
